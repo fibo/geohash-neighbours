@@ -2,6 +2,8 @@
 
 > finds the 8 cells near a given [geohash][1]
 
+[![Node engine](https://img.shields.io/node/v/dflow.svg)](https://nodejs.org/en/) [![NPM version](https://badge.fury.io/js/dflow.svg)](http://badge.fury.io/js/dflow) [![Build Status](https://travis-ci.org/fibo/dflow.svg?branch=master)](https://travis-ci.org/fibo/dflow?branch=master)
+
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ## Install
@@ -14,7 +16,7 @@ npm install geohash-neighbours --save
 
 ## GeoHash format
 
-The geoHash is given in binary format as a string of 0 1, so iterations looks like the following
+The geoHash is given in binary format as a string of 0 1, so iterations look like the following
 
 **n=1**
 
@@ -26,7 +28,8 @@ The geoHash is given in binary format as a string of 0 1, so iterations looks li
 
 ```
 00 - 01
-   /
+  ___/
+ /
 10 - 11
 ```
 
