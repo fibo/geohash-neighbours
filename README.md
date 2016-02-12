@@ -2,7 +2,7 @@
 
 > finds the 8 cells near a given [geohash][1]
 
-[![Node engine](https://img.shields.io/node/v/dflow.svg)](https://nodejs.org/en/) [![NPM version](https://badge.fury.io/js/dflow.svg)](http://badge.fury.io/js/dflow) [![Build Status](https://travis-ci.org/fibo/dflow.svg?branch=master)](https://travis-ci.org/fibo/dflow?branch=master)
+[![Node engine](https://img.shields.io/node/v/geohash-neighbours.svg)](https://nodejs.org/en/) [![NPM version](https://badge.fury.io/js/geohash-neighbours.svg)](http://badge.fury.io/js/geohash-neighbours) [![Build Status](https://travis-ci.org/fibo/geohash-neighbours.svg?branch=master)](https://travis-ci.org/fibo/geohash-neighbours?branch=master)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
