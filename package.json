@@ -1,0 +1,43 @@
+{
+  "name": "geohash-neighbours",
+  "description": "finds the 8 cells near a given geohash",
+  "version": "0.0.0",
+  "homepage": "http://npm.im/geohash-neighbours",
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "http://g14n.info"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4 <5"
+  },
+  "scripts": {
+    "check-deps": "npm outdated",
+    "lint": "standard --global describe --global it",
+    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fibo/geohash-neighbours.git"
+  },
+  "keywords": [
+    "geohash"
+  ],
+  "bugs": {
+    "url": "https://github.com/fibo/geohash-neighbours/issues"
+  },
+  "pre-commit": [
+    "lint",
+    "test",
+    "check-deps"
+  ],
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "pre-commit": "^1.1.2",
+    "should": "^8.2.2",
+    "standard": "^6.0.4"
+  },
+  "dependencies": {}
+}
