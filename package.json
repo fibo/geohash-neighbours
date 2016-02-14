@@ -2,7 +2,7 @@
   "name": "geohash-neighbours",
   "description": "finds the cells near a given geohash",
   "version": "0.0.0",
-  "homepage": "http://npm.im/geohash-neighbours",
+  "homepage": "http://g14n.info/geohash-neighbours",
   "author": {
     "name": "Gianluca Casati",
     "url": "http://g14n.info"
@@ -13,7 +13,12 @@
     "node": ">=4 <5"
   },
   "scripts": {
+    "_push": "git push origin master && npm run gh-pages_push",
+    "_pull": "git pull origin master && npm run gh-pages_pull",
     "check-deps": "npm outdated",
+    "gh-pages_push": "git subtree --prefix gh-pages push origin gh-pages",
+    "gh-pages_pull": "git subtree --prefix gh-pages pull origin gh-pages",
+    "homepage": "echo \"---\ntitle: $npm_package_name\n---\" > gh-pages/index.md; cat README.md >> gh-pages/index.md",
     "lint": "standard --global describe --global it",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "test": "mocha"

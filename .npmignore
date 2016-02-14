@@ -1,0 +1,6 @@
+.*
+bower.json
+coverage
+dist/
+gh-pages
+npm-debug.log
