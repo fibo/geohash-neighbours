@@ -1,6 +1,6 @@
 {
   "name": "geohash-neighbours",
-  "description": "finds the 8 cells near a given geohash",
+  "description": "finds the cells near a given geohash",
   "version": "0.0.0",
   "homepage": "http://npm.im/geohash-neighbours",
   "author": {

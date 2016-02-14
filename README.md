@@ -1,12 +1,12 @@
 # geohash-neighbours
 
-> finds the 8 cells near a given [geohash][1]
+> finds the cells near a given [geohash][1]
 
 [![Node engine](https://img.shields.io/node/v/geohash-neighbours.svg)](https://nodejs.org/en/) [![NPM version](https://badge.fury.io/js/geohash-neighbours.svg)](http://badge.fury.io/js/geohash-neighbours) [![Build Status](https://travis-ci.org/fibo/geohash-neighbours.svg?branch=master)](https://travis-ci.org/fibo/geohash-neighbours?branch=master)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-## Install
+## Installation
 
 With [npm](https://www.npmjs.com/) do
 
@@ -62,7 +62,7 @@ The geoHash is given in binary format as a string of 0 1, so iterations look lik
 <a name="neighboursOf"></a>
 ### `neighboursOf(geoHash)`
 
-> computes the 8 cells near a given geohash
+> computes the cells near a given geohash
 
 ```
 const neighboursOf = require('geohash-neighbours').neighboursOf
@@ -76,7 +76,119 @@ console.log(neighboursOf(geoHash)) // [
 ```
 
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
-* `@returns {Array}`: neighbours of given geohash, that are 8 geohashes belonging to the same iteration step.
+* `@returns {Array}`: neighbours of given geohash, that are 8 geohashes in most cases, belonging to the same iteration step.
+
+<a name="eastOf"></a>
+### `eastOf(geoHash)`
+
+> neighbour at east a given geohash, if any
+
+* `@param {String}`: geoHash given in [geoHash format](#geohash-format).
+* `@returns {String}`: neighbour at east of given geohash.
+
+```
+const eastOf = require('geohash-neighbours').eastOf
+
+console.log(eastOf('0000'))
+```
+
+<a name="northEastOf"></a>
+### `northEastOf(geoHash)`
+
+> neighbour at northEast a given geohash, if any
+
+* `@param {String}`: geoHash given in [geoHash format](#geohash-format).
+* `@returns {String}`: neighbour at northEast of given geohash.
+
+```
+const northEastOf = require('geohash-neighbours').northEastOf
+
+console.log(northEastOf('0000'))
+```
+
+<a name="northOf"></a>
+### `northOf(geoHash)`
+
+> neighbour at north a given geohash, if any
+
+* `@param {String}`: geoHash given in [geoHash format](#geohash-format).
+* `@returns {String}`: neighbour at north of given geohash.
+
+```
+const northOf = require('geohash-neighbours').northOf
+
+console.log(northOf('0000'))
+```
+
+<a name="northWestOf"></a>
+### `northWestOf(geoHash)`
+
+> neighbour at northWest a given geohash, if any
+
+* `@param {String}`: geoHash given in [geoHash format](#geohash-format).
+* `@returns {String}`: neighbour at northWest of given geohash.
+
+```
+const northWestOf = require('geohash-neighbours').northWestOf
+
+console.log(northWestOf('0000'))
+```
+
+<a name="westOf"></a>
+### `westOf(geoHash)`
+
+> neighbour at west a given geohash, if any
+
+* `@param {String}`: geoHash given in [geoHash format](#geohash-format).
+* `@returns {String}`: neighbour at west of given geohash.
+
+```
+const westOf = require('geohash-neighbours').westOf
+
+console.log(westOf('0000'))
+```
+
+<a name="southWestOf"></a>
+### `southWestOf(geoHash)`
+
+> neighbour at southWest a given geohash, if any
+
+* `@param {String}`: geoHash given in [geoHash format](#geohash-format).
+* `@returns {String}`: neighbour at southWest of given geohash.
+
+```
+const southWestOf = require('geohash-neighbours').southWestOf
+
+console.log(southWestOf('0000'))
+```
+
+<a name="southOf"></a>
+### `southOf(geoHash)`
+
+> neighbour at south a given geohash, if any
+
+* `@param {String}`: geoHash given in [geoHash format](#geohash-format).
+* `@returns {String}`: neighbour at south of given geohash.
+
+```
+const southOf = require('geohash-neighbours').southOf
+
+console.log(southOf('0000'))
+```
+
+<a name="southEastOf"></a>
+### `southEastOf(geoHash)`
+
+> neighbour at southEast a given geohash, if any
+
+* `@param {String}`: geoHash given in [geoHash format](#geohash-format).
+* `@returns {String}`: neighbour at southEast of given geohash.
+
+```
+const southEastOf = require('geohash-neighbours').southEastOf
+
+console.log(southEastOf('0000'))
+```
 
 ## License
 
