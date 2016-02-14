@@ -1,19 +1,24 @@
+const eastOf = require('./eastOf')
+const northEastOf = require('./northEastOf')
+const northOf = require('./northOf')
+const northWestOf = require('./northWestOf')
+const westOf = require('./westOf')
+const southWestOf = require('./southWestOf')
+const southOf = require('./southOf')
+const southEastOf = require('./southEastOf')
+
 const validate = require('./validate')
 
 /**
- * Computes the 8 cells near a given geohash.
+ * Computes the cells near a given geohash.
  *
  * @param {String} geohash
  *
- * @returns {Array} neighbours
+ * @returns {Array} neighbours in anticlockwise order
  */
 
 function neighboursOf (geoHash) {
-  try {
-    validate(geoHash)
-  } catch (err) {
-    throw err
-  }
+  validate(geoHash)
 
   var neighbours = []
 
@@ -23,22 +28,49 @@ function neighboursOf (geoHash) {
 
   const edgeCase = [
     // n = 0
-    [],
+    {'0': null},
     // n = 1
     {'0': ['1'], '1': ['0']},
     // n = 2
     {
       '00': ['01', '10', '11'],
       '01': ['00', '10', '11'],
-      '10': ['00', '01', '11'],
-      '11': ['00', '01', '10']
+      '10': ['11', '01', '00'],
+      '11': ['10', '00', '01']
     },
     // n = 3
-    ['TODO']
+    {
+      '000': ['001', '011', '111', '100', '101'],
+      '001': ['010', '000', '100', '101', '110'],
+      '010': ['011', '001', '101', '110', '111'],
+      '011': ['000', '010', '110', '111', '100'],
+      '100': ['101', '001', '000', '011', '111'],
+      '101': ['110', '010', '001', '000', '100'],
+      '110': ['111', '011', '010', '001', '101'],
+      '111': ['100', '000', '011', '010', '110']
+    }
   ]
 
-  if (numIterations < 4) {
-    return edgeCase[numIterations][geoHash]
+  if (numIterations < 4) return edgeCase[numIterations][geoHash]
+
+  neighbours.push(eastOf(geoHash))
+
+  const geoHashAtNorth = northOf(geoHash)
+
+  if (geoHashAtNorth) {
+    neighbours.push(northEastOf(geoHash))
+    neighbours.push(geoHashAtNorth)
+    neighbours.push(northWestOf(geoHash))
+  }
+
+  neighbours.push(westOf(geoHash))
+
+  const geoHashAtSouth = southOf(geoHash)
+
+  if (geoHashAtSouth) {
+    neighbours.push(southWestOf(geoHash))
+    neighbours.push(geoHashAtSouth)
+    neighbours.push(southEastOf(geoHash))
   }
 
   return neighbours

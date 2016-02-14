@@ -62,7 +62,6 @@ The geoHash is given in binary format as a string of 0 1, so iterations look lik
 
 ## API
 
-<a name="neighboursOf"></a>
 ### `neighboursOf(geoHash)`
 
 > computes the cells near a given geohash
@@ -79,9 +78,8 @@ console.log(neighboursOf(geoHash)) // [
 ```
 
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
-* `@returns {Array}`: neighbours of given geohash, that are 8 geohashes in most cases, belonging to the same iteration step.
+* `@returns {Array}`: neighbours of given geohash, that are 8 geohashes in most cases, belonging to the same iteration step. Cells are in anticlockwise order.
 
-<a name="eastOf"></a>
 ### `eastOf(geoHash)`
 
 > neighbour at east a given geohash, if any
@@ -95,7 +93,6 @@ const eastOf = require('geohash-neighbours').eastOf
 console.log(eastOf('0000'))
 ```
 
-<a name="northEastOf"></a>
 ### `northEastOf(geoHash)`
 
 > neighbour at northEast a given geohash, if any
@@ -109,7 +106,6 @@ const northEastOf = require('geohash-neighbours').northEastOf
 console.log(northEastOf('0000'))
 ```
 
-<a name="northOf"></a>
 ### `northOf(geoHash)`
 
 > neighbour at north a given geohash, if any
@@ -123,7 +119,6 @@ const northOf = require('geohash-neighbours').northOf
 console.log(northOf('0000'))
 ```
 
-<a name="northWestOf"></a>
 ### `northWestOf(geoHash)`
 
 > neighbour at northWest a given geohash, if any
@@ -137,7 +132,6 @@ const northWestOf = require('geohash-neighbours').northWestOf
 console.log(northWestOf('0000'))
 ```
 
-<a name="westOf"></a>
 ### `westOf(geoHash)`
 
 > neighbour at west a given geohash, if any
@@ -151,7 +145,6 @@ const westOf = require('geohash-neighbours').westOf
 console.log(westOf('0000'))
 ```
 
-<a name="southWestOf"></a>
 ### `southWestOf(geoHash)`
 
 > neighbour at southWest a given geohash, if any
@@ -165,7 +158,6 @@ const southWestOf = require('geohash-neighbours').southWestOf
 console.log(southWestOf('0000'))
 ```
 
-<a name="southOf"></a>
 ### `southOf(geoHash)`
 
 > neighbour at south a given geohash, if any
@@ -179,7 +171,6 @@ const southOf = require('geohash-neighbours').southOf
 console.log(southOf('0000'))
 ```
 
-<a name="southEastOf"></a>
 ### `southEastOf(geoHash)`
 
 > neighbour at southEast a given geohash, if any
