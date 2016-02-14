@@ -57,7 +57,7 @@ The geoHash is given in binary format as a string of 0 1, so iterations look lik
 1000 - 1001   1100 - 1101
    ____/    __/   ____/
   /        /     /
-1000 - 1011   1110 - 1111
+1010 - 1011   1110 - 1111
 ```
 
 See also [Geo hashing wiki][2].

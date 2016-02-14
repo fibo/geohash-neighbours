@@ -55,7 +55,13 @@ function northOf (geoHash) {
   if (n % 2 === 0) {
     // TODO
   } else {
-    // TODO
+    const container = geoHash.substr(0, n - 1)
+    const lastBit = geoHash.substr(n - 1, 1)
+
+    const northOfContainer = northOf(container)
+
+    if (northOfContainer) return northOfContainer + lastBit
+    else return null
   }
 }
 

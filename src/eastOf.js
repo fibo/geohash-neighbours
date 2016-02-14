@@ -28,15 +28,38 @@ function eastOf (geoHash) {
       '101': '110',
       '110': '111',
       '111': '100'
+    },
+    // n = 4
+    {
+      '0000': '0001',
+      '0001': '0100',
+      '0010': '0011',
+      '0011': '0110',
+      '0100': '0101',
+      '0101': '0000',
+      '0110': '0111',
+      '0111': '0010',
+      '1000': '1001',
+      '1001': '1100',
+      '1010': '1011',
+      '1011': '1110',
+      '1100': '1101',
+      '1101': '1000',
+      '1110': '1111',
+      '1111': '1010'
     }
   ]
 
-  if (n < 4) return edgeCase[n][geoHash]
+  if (n < 5) return edgeCase[n][geoHash]
 
   if (n % 2 === 0) {
     // TODO
   } else {
-    // TODO
+    const container = geoHash.substr(0, n - 1)
+    const lastBit = geoHash.substr(n - 1, 1)
+
+    if (lastBit === '0') return container + '1'
+    else return eastOf(container) + '0'
   }
 }
 

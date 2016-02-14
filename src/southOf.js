@@ -50,12 +50,18 @@ function southOf (geoHash) {
     }
   ]
 
-  if (n < 4) return edgeCase[n][geoHash]
+  if (n < 5) return edgeCase[n][geoHash]
 
   if (n % 2 === 0) {
     // TODO
   } else {
-    // TODO
+    const container = geoHash.substr(0, n - 1)
+    const lastBit = geoHash.substr(n - 1, 1)
+
+    const southOfContainer = southOf(container)
+
+    if (southOfContainer) return southOfContainer + lastBit
+    else return null
   }
 }
 

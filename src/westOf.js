@@ -28,15 +28,38 @@ function westOf (geoHash) {
       '101': '100',
       '110': '101',
       '111': '110'
+    },
+    // n = 4
+    {
+      '0000': '0101',
+      '0001': '0000',
+      '0010': '0111',
+      '0011': '0010',
+      '0100': '0001',
+      '0101': '0100',
+      '0110': '0011',
+      '0111': '0110',
+      '1000': '1101',
+      '1001': '1000',
+      '1010': '1111',
+      '1011': '1010',
+      '1100': '1001',
+      '1101': '1100',
+      '1110': '1011',
+      '1111': '1110'
     }
   ]
 
-  if (n < 4) return edgeCase[n][geoHash]
+  if (n < 5) return edgeCase[n][geoHash]
 
   if (n % 2 === 0) {
     // TODO
   } else {
-    // TODO
+    const container = geoHash.substr(0, n - 1)
+    const lastBit = geoHash.substr(n - 1, 1)
+
+    if (lastBit === '1') return container + '0'
+    else return westOf(container) + '1'
   }
 }
 
