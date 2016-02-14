@@ -57,6 +57,8 @@ The geoHash is given in binary format as a string of 0 1, so iterations look lik
 1000 - 1011   1110 - 1111
 ```
 
+See also [Geo hashing wiki][2].
+
 ## API
 
 ### `neighboursOf(geoHash)`
@@ -186,4 +188,5 @@ console.log(southEastOf('0000'))
 [MIT](http://g14n.info/mit-license/)
 
 [1]: https://en.wikipedia.org/wiki/Geohash "Geohash"
+[2]: http://wiki.xkcd.com/geohashing/Main_Page "Geo hashing wiki"
 

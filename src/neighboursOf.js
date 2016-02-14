@@ -20,9 +20,10 @@ const validate = require('./validate')
 function neighboursOf (geoHash) {
   validate(geoHash)
 
-  var neighbours = []
+  let neighbours = []
 
-  const numIterations = geoHash.length
+  // Number of iterations.
+  const n = geoHash.length
 
   // Edge cases first
 
@@ -51,7 +52,7 @@ function neighboursOf (geoHash) {
     }
   ]
 
-  if (numIterations < 4) return edgeCase[numIterations][geoHash]
+  if (n < 4) return edgeCase[n][geoHash]
 
   neighbours.push(eastOf(geoHash))
 
