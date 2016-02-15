@@ -6,6 +6,21 @@
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
+**Table Of Contents:**
+
+* [Installation](#installation)
+* [GeoHash format](#geohash-format)
+* [Api](http://g14n.info/dflow/api)
+  - [neighboursOf](#neighboursofgeohash)
+  - [eastOf](#eastofgeohash)
+  - [northEastOf](#northeastofgeohash)
+  - [northOf](#northofgeohash)
+  - [northWestOf](#northwestofgeohash)
+  - [westOf](#westofgeohash)
+  - [southWestOf](#southwestofgeohash)
+  - [southOf](#southofgeohash)
+  - [southEastOf](#southeastofgeohash)
+
 ## Installation
 
 With [npm](https://www.npmjs.com/) do
