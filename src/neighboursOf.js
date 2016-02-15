@@ -1,11 +1,11 @@
 const eastOf = require('./eastOf')
-const northEastOf = require('./northEastOf')
+const northeastOf = require('./northeastOf')
 const northOf = require('./northOf')
-const northWestOf = require('./northWestOf')
+const northwestOf = require('./northwestOf')
 const westOf = require('./westOf')
-const southWestOf = require('./southWestOf')
+const southwestOf = require('./southwestOf')
 const southOf = require('./southOf')
-const southEastOf = require('./southEastOf')
+const southeastOf = require('./southeastOf')
 
 const validate = require('./validate')
 
@@ -59,9 +59,9 @@ function neighboursOf (geoHash) {
   const geoHashAtNorth = northOf(geoHash)
 
   if (geoHashAtNorth) {
-    neighbours.push(northEastOf(geoHash))
+    neighbours.push(northeastOf(geoHash))
     neighbours.push(geoHashAtNorth)
-    neighbours.push(northWestOf(geoHash))
+    neighbours.push(northwestOf(geoHash))
   }
 
   neighbours.push(westOf(geoHash))
@@ -69,9 +69,9 @@ function neighboursOf (geoHash) {
   const geoHashAtSouth = southOf(geoHash)
 
   if (geoHashAtSouth) {
-    neighbours.push(southWestOf(geoHash))
+    neighbours.push(southwestOf(geoHash))
     neighbours.push(geoHashAtSouth)
-    neighbours.push(southEastOf(geoHash))
+    neighbours.push(southeastOf(geoHash))
   }
 
   return neighbours

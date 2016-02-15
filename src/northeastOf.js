@@ -2,7 +2,7 @@ const eastOf = require('./eastOf')
 const northOf = require('./northOf')
 const validate = require('./validate')
 
-function northEastOf (geoHash) {
+function northeastOf (geoHash) {
   validate(geoHash)
 
   const geoHashAtNorth = northOf(geoHash)
@@ -11,4 +11,4 @@ function northEastOf (geoHash) {
   else return null
 }
 
-module.exports = northEastOf
+module.exports = northeastOf

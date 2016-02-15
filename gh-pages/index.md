@@ -5,7 +5,7 @@ title: geohash-neighbours
 
 > finds the cells near a given [geohash][1]
 
-[![Node engine](https://img.shields.io/node/v/geohash-neighbours.svg)](https://nodejs.org/en/) [![NPM version](https://badge.fury.io/js/geohash-neighbours.svg)](http://badge.fury.io/js/geohash-neighbours) [![Build Status](https://travis-ci.org/fibo/geohash-neighbours.svg?branch=master)](https://travis-ci.org/fibo/geohash-neighbours?branch=master)
+[![Node engine](https://img.shields.io/node/v/geohash-neighbours.svg)](https://nodejs.org/en/) [![NPM version](https://badge.fury.io/js/geohash-neighbours.svg)](http://badge.fury.io/js/geohash-neighbours) [![Build Status](https://travis-ci.org/fibo/geohash-neighbours.svg?branch=master)](https://travis-ci.org/fibo/geohash-neighbours?branch=master) [![Test page](https://img.shields.io/badge/test-page-blue.svg)](http://g14n.info/geohash-neighbours/test)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
@@ -16,13 +16,13 @@ title: geohash-neighbours
 * [Api](http://g14n.info/dflow/api)
   - [neighboursOf](#neighboursofgeohash)
   - [eastOf](#eastofgeohash)
-  - [northEastOf](#northeastofgeohash)
+  - [northeastOf](#northeastofgeohash)
   - [northOf](#northofgeohash)
-  - [northWestOf](#northwestofgeohash)
+  - [northwestOf](#northwestofgeohash)
   - [westOf](#westofgeohash)
-  - [southWestOf](#southwestofgeohash)
+  - [southwestOf](#southwestofgeohash)
   - [southOf](#southofgeohash)
-  - [southEastOf](#southeastofgeohash)
+  - [southeastOf](#southeastofgeohash)
 
 ## Installation
 
@@ -133,17 +133,17 @@ const eastOf = require('geohash-neighbours').eastOf
 console.log(eastOf('0000'))
 ```
 
-### `northEastOf(geoHash)`
+### `northeastOf(geoHash)`
 
-> neighbour at northEast a given geohash, if any
+> neighbour at northeast a given geohash, if any
 
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
-* `@returns {String}`: neighbour at northEast of given geohash.
+* `@returns {String}`: neighbour at northeast of given geohash.
 
 ```
-const northEastOf = require('geohash-neighbours').northEastOf
+const northeastOf = require('geohash-neighbours').northeastOf
 
-console.log(northEastOf('0000'))
+console.log(northeastOf('0000'))
 ```
 
 ### `northOf(geoHash)`
@@ -159,17 +159,17 @@ const northOf = require('geohash-neighbours').northOf
 console.log(northOf('0000'))
 ```
 
-### `northWestOf(geoHash)`
+### `northwestOf(geoHash)`
 
-> neighbour at northWest a given geohash, if any
+> neighbour at northwest a given geohash, if any
 
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
-* `@returns {String}`: neighbour at northWest of given geohash.
+* `@returns {String}`: neighbour at northwest of given geohash.
 
 ```
-const northWestOf = require('geohash-neighbours').northWestOf
+const northwestOf = require('geohash-neighbours').northwestOf
 
-console.log(northWestOf('0000'))
+console.log(northwestOf('0000'))
 ```
 
 ### `westOf(geoHash)`
@@ -185,17 +185,17 @@ const westOf = require('geohash-neighbours').westOf
 console.log(westOf('0000'))
 ```
 
-### `southWestOf(geoHash)`
+### `southwestOf(geoHash)`
 
-> neighbour at southWest a given geohash, if any
+> neighbour at southwest a given geohash, if any
 
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
-* `@returns {String}`: neighbour at southWest of given geohash.
+* `@returns {String}`: neighbour at southwest of given geohash.
 
 ```
-const southWestOf = require('geohash-neighbours').southWestOf
+const southwestOf = require('geohash-neighbours').southwestOf
 
-console.log(southWestOf('0000'))
+console.log(southwestOf('0000'))
 ```
 
 ### `southOf(geoHash)`
@@ -211,17 +211,17 @@ const southOf = require('geohash-neighbours').southOf
 console.log(southOf('0000'))
 ```
 
-### `southEastOf(geoHash)`
+### `southeastOf(geoHash)`
 
-> neighbour at southEast a given geohash, if any
+> neighbour at southeast a given geohash, if any
 
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
-* `@returns {String}`: neighbour at southEast of given geohash.
+* `@returns {String}`: neighbour at southeast of given geohash.
 
 ```
-const southEastOf = require('geohash-neighbours').southEastOf
+const southeastOf = require('geohash-neighbours').southeastOf
 
-console.log(southEastOf('0000'))
+console.log(southeastOf('0000'))
 ```
 
 ## License

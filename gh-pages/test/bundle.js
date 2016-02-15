@@ -3,16 +3,16 @@ require('strict-mode')(() => {
   exports.neighboursOf = require('./src/neighboursOf')
 
   exports.eastOf = require('./src/eastOf')
-  exports.northEastOf = require('./src/northEastOf')
+  exports.northeastOf = require('./src/northeastOf')
   exports.northOf = require('./src/northOf')
-  exports.northWestOf = require('./src/northWestOf')
+  exports.northwestOf = require('./src/northwestOf')
   exports.westOf = require('./src/westOf')
-  exports.southWestOf = require('./src/southWestOf')
+  exports.southwestOf = require('./src/southwestOf')
   exports.southOf = require('./src/southOf')
-  exports.southEastOf = require('./src/southEastOf')
+  exports.southeastOf = require('./src/southeastOf')
 })
 
-},{"./src/eastOf":32,"./src/neighboursOf":33,"./src/northEastOf":34,"./src/northOf":35,"./src/northWestOf":36,"./src/southEastOf":37,"./src/southOf":38,"./src/southWestOf":39,"./src/westOf":41,"strict-mode":31}],2:[function(require,module,exports){
+},{"./src/eastOf":32,"./src/neighboursOf":33,"./src/northOf":34,"./src/northeastOf":35,"./src/northwestOf":36,"./src/southOf":37,"./src/southeastOf":38,"./src/southwestOf":39,"./src/westOf":41,"strict-mode":31}],2:[function(require,module,exports){
 (function (global){
 /*!
  * The buffer module from node.js, for the browser.
@@ -5746,13 +5746,13 @@ module.exports = eastOf
 
 },{"./validate":40}],33:[function(require,module,exports){
 const eastOf = require('./eastOf')
-const northEastOf = require('./northEastOf')
+const northeastOf = require('./northeastOf')
 const northOf = require('./northOf')
-const northWestOf = require('./northWestOf')
+const northwestOf = require('./northwestOf')
 const westOf = require('./westOf')
-const southWestOf = require('./southWestOf')
+const southwestOf = require('./southwestOf')
 const southOf = require('./southOf')
-const southEastOf = require('./southEastOf')
+const southeastOf = require('./southeastOf')
 
 const validate = require('./validate')
 
@@ -5806,9 +5806,9 @@ function neighboursOf (geoHash) {
   const geoHashAtNorth = northOf(geoHash)
 
   if (geoHashAtNorth) {
-    neighbours.push(northEastOf(geoHash))
+    neighbours.push(northeastOf(geoHash))
     neighbours.push(geoHashAtNorth)
-    neighbours.push(northWestOf(geoHash))
+    neighbours.push(northwestOf(geoHash))
   }
 
   neighbours.push(westOf(geoHash))
@@ -5816,9 +5816,9 @@ function neighboursOf (geoHash) {
   const geoHashAtSouth = southOf(geoHash)
 
   if (geoHashAtSouth) {
-    neighbours.push(southWestOf(geoHash))
+    neighbours.push(southwestOf(geoHash))
     neighbours.push(geoHashAtSouth)
-    neighbours.push(southEastOf(geoHash))
+    neighbours.push(southeastOf(geoHash))
   }
 
   return neighbours
@@ -5826,23 +5826,7 @@ function neighboursOf (geoHash) {
 
 module.exports = neighboursOf
 
-},{"./eastOf":32,"./northEastOf":34,"./northOf":35,"./northWestOf":36,"./southEastOf":37,"./southOf":38,"./southWestOf":39,"./validate":40,"./westOf":41}],34:[function(require,module,exports){
-const eastOf = require('./eastOf')
-const northOf = require('./northOf')
-const validate = require('./validate')
-
-function northEastOf (geoHash) {
-  validate(geoHash)
-
-  const geoHashAtNorth = northOf(geoHash)
-
-  if (geoHashAtNorth) return eastOf(geoHashAtNorth)
-  else return null
-}
-
-module.exports = northEastOf
-
-},{"./eastOf":32,"./northOf":35,"./validate":40}],35:[function(require,module,exports){
+},{"./eastOf":32,"./northOf":34,"./northeastOf":35,"./northwestOf":36,"./southOf":37,"./southeastOf":38,"./southwestOf":39,"./validate":40,"./westOf":41}],34:[function(require,module,exports){
 const validate = require('./validate')
 
 function northOf (geoHash) {
@@ -5928,12 +5912,28 @@ function northOf (geoHash) {
 
 module.exports = northOf
 
-},{"./validate":40}],36:[function(require,module,exports){
+},{"./validate":40}],35:[function(require,module,exports){
+const eastOf = require('./eastOf')
+const northOf = require('./northOf')
+const validate = require('./validate')
+
+function northeastOf (geoHash) {
+  validate(geoHash)
+
+  const geoHashAtNorth = northOf(geoHash)
+
+  if (geoHashAtNorth) return eastOf(geoHashAtNorth)
+  else return null
+}
+
+module.exports = northeastOf
+
+},{"./eastOf":32,"./northOf":34,"./validate":40}],36:[function(require,module,exports){
 const westOf = require('./westOf')
 const northOf = require('./northOf')
 const validate = require('./validate')
 
-function northWestOf (geoHash) {
+function northwestOf (geoHash) {
   validate(geoHash)
 
   const geoHashAtNorth = northOf(geoHash)
@@ -5942,25 +5942,9 @@ function northWestOf (geoHash) {
   else return null
 }
 
-module.exports = northWestOf
+module.exports = northwestOf
 
-},{"./northOf":35,"./validate":40,"./westOf":41}],37:[function(require,module,exports){
-const eastOf = require('./eastOf')
-const southOf = require('./southOf')
-const validate = require('./validate')
-
-function southEastOf (geoHash) {
-  validate(geoHash)
-
-  const geoHashAtSouth = southOf(geoHash)
-
-  if (geoHashAtSouth) return eastOf(geoHashAtSouth)
-  else return null
-}
-
-module.exports = southEastOf
-
-},{"./eastOf":32,"./southOf":38,"./validate":40}],38:[function(require,module,exports){
+},{"./northOf":34,"./validate":40,"./westOf":41}],37:[function(require,module,exports){
 const validate = require('./validate')
 
 function southOf (geoHash) {
@@ -6046,12 +6030,28 @@ function southOf (geoHash) {
 
 module.exports = southOf
 
-},{"./validate":40}],39:[function(require,module,exports){
+},{"./validate":40}],38:[function(require,module,exports){
+const eastOf = require('./eastOf')
+const southOf = require('./southOf')
+const validate = require('./validate')
+
+function southeastOf (geoHash) {
+  validate(geoHash)
+
+  const geoHashAtSouth = southOf(geoHash)
+
+  if (geoHashAtSouth) return eastOf(geoHashAtSouth)
+  else return null
+}
+
+module.exports = southeastOf
+
+},{"./eastOf":32,"./southOf":37,"./validate":40}],39:[function(require,module,exports){
 const westOf = require('./westOf')
 const southOf = require('./southOf')
 const validate = require('./validate')
 
-function southWestOf (geoHash) {
+function southwestOf (geoHash) {
   validate(geoHash)
 
   const geoHashAtSouth = southOf(geoHash)
@@ -6060,9 +6060,9 @@ function southWestOf (geoHash) {
   else return null
 }
 
-module.exports = southWestOf
+module.exports = southwestOf
 
-},{"./southOf":38,"./validate":40,"./westOf":41}],40:[function(require,module,exports){
+},{"./southOf":37,"./validate":40,"./westOf":41}],40:[function(require,module,exports){
 /**
  * Checks if given geoHash has a valid format
  *
@@ -6073,19 +6073,19 @@ module.exports = southWestOf
  * @throws {TypeError}
  */
 
-function validate (geoHash) {
-  const onlyZeroAndOne = /^[01]+$/
+function validate(geoHash) {
+  var onlyZeroAndOne = /^[01]+$/;
 
   if (typeof geoHash !== 'string') {
-    throw new TypeError('geoHash must be a string: ' + geoHash)
+    throw new TypeError('geoHash must be a string: ' + geoHash);
   }
 
   if (!geoHash.match(onlyZeroAndOne)) {
-    throw new TypeError('geoHash must contain only 0 or 1: ' + geoHash)
+    throw new TypeError('geoHash must contain only 0 or 1: ' + geoHash);
   }
 }
 
-module.exports = validate
+module.exports = validate;
 
 },{}],41:[function(require,module,exports){
 const validate = require('./validate')
@@ -6168,12 +6168,119 @@ function westOf (geoHash) {
 module.exports = westOf
 
 },{"./validate":40}],42:[function(require,module,exports){
+var eastOf = require('geohash-neighbours').eastOf;
+
+describe('eastOf', function () {
+  it('works when n=1', function () {
+    eastOf('0').should.be.eql('1');
+    eastOf('1').should.be.eql('0');
+  });
+
+  it('works when n=2');
+
+  it('works when n=3');
+
+  it('works when n=4');
+
+  it('works when n=5', function () {
+    eastOf('00000').should.be.eql('00001');
+    eastOf('00001').should.be.eql('00010');
+
+    // TODO add test cases
+    eastOf('11111').should.be.eql('10100');
+  });
+
+  it('works when n=6', function () {
+    eastOf('000000').should.be.eql('000001');
+    eastOf('000001').should.be.eql('000100');
+    eastOf('000010').should.be.eql('000011');
+
+    // TODO add test cases
+    eastOf('111110').should.be.eql('111111');
+  });
+});
+
+},{"geohash-neighbours":44}],43:[function(require,module,exports){
+var neighboursOf = require('geohash-neighbours').neighboursOf;
+var should = require('should');
+
+describe('neighboursOf', function () {
+  it('works when n=1', function () {
+    should.deepEqual(neighboursOf('0'), ['1']);
+    should.deepEqual(neighboursOf('1'), ['0']);
+  });
+});
+
+},{"geohash-neighbours":44,"should":6}],44:[function(require,module,exports){
 
 // Cheating npm require.
 module.exports = require('../../..')
 
 
-},{"../../..":1}],43:[function(require,module,exports){
+},{"../../..":1}],45:[function(require,module,exports){
+var northOf = require('geohash-neighbours').northOf;
+var should = require('should');
+
+describe('northOf', function () {
+  it('works when n=1', function () {
+    should(northOf('0')).be.null;
+    should(northOf('1')).be.null;
+  });
+
+  it('works when n=2');
+
+  it('works when n=3');
+
+  it('works when n=4');
+
+  it('works when n=5', function () {
+    should(northOf('00000')).be.null;
+    should(northOf('00001')).be.null;
+    northOf('00100').should.be.eql('00000');
+    northOf('00101').should.be.eql('00001');
+
+    // TODO add test cases
+    northOf('11110').should.be.eql('11010');
+    northOf('11111').should.be.eql('11011');
+  });
+
+  it('works when n=6', function () {
+    should(northOf('000000')).be.null;
+    should(northOf('000001')).be.null;
+    northOf('000010').should.be.eql('000000');
+    northOf('000011').should.be.eql('000001');
+
+    // TODO add test cases
+    northOf('111110').should.be.eql('111100');
+    northOf('111111').should.be.eql('111101');
+  });
+
+  it('returns null if geohash is on north border', function () {
+    should(northOf('0000000')).be.null;
+  });
+});
+
+},{"geohash-neighbours":44,"should":6}],46:[function(require,module,exports){
+var northeastOf = require('geohash-neighbours').northeastOf;
+var should = require('should');
+
+describe('northeastOf', function () {
+  it('returns null if geohash is on north border', function () {
+    should(northeastOf('000000000')).be.null;
+  });
+});
+
+},{"geohash-neighbours":44,"should":6}],47:[function(require,module,exports){
+var northwestOf = require('geohash-neighbours').northwestOf;
+var should = require('should');
+
+describe('northwestOf', function () {
+  it('returns null if geohash is on north border', function () {
+    should(northwestOf('0000000000000')).be.null;
+  });
+});
+
+},{"geohash-neighbours":44,"should":6}],48:[function(require,module,exports){
 var southOf = require('geohash-neighbours').southOf;
 var should = require('should');
 
@@ -6212,4 +6319,84 @@ describe('southOf', function () {
   });
 });
 
-},{"geohash-neighbours":42,"should":6}]},{},[43]);
+},{"geohash-neighbours":44,"should":6}],49:[function(require,module,exports){
+var southeastOf = require('geohash-neighbours').southeastOf;
+var should = require('should');
+
+describe('southeastOf', function () {
+  it('returns null if geohash is on south border', function () {
+    should(southeastOf('111111')).be.null;
+  });
+});
+
+},{"geohash-neighbours":44,"should":6}],50:[function(require,module,exports){
+var southwestOf = require('geohash-neighbours').southwestOf;
+var should = require('should');
+
+describe('southwestOf', function () {
+  it('returns null if geohash is on south border', function () {
+    should(southwestOf('111111')).be.null;
+  });
+});
+
+},{"geohash-neighbours":44,"should":6}],51:[function(require,module,exports){
+var should = require('should');
+var validate = require('../src/validate');
+
+describe('validate', function () {
+  it('throws if geoHash is not a string', function () {
+    ;(function () {
+      validate({ 'not': 'a string' });
+    }).should.throwError(/geoHash must be a string:/);
+  });
+
+  it('throws if geoHash is not a string of 0 1', function () {
+    ;(function () {
+      validate('not only 0 1');
+    }).should.throwError(/geoHash must contain only 0 or 1:/);
+  });
+
+  it('does not throw if geoHash is a string of 0 1', function () {
+    should.doesNotThrow(function () {
+      validate('01');
+      validate('101');
+      validate('1010');
+      validate('0010000000101');
+    });
+  });
+});
+
+},{"../src/validate":40,"should":6}],52:[function(require,module,exports){
+var westOf = require('geohash-neighbours').westOf;
+
+describe('westOf', function () {
+  it('works when n=1', function () {
+    westOf('0').should.be.eql('1');
+    westOf('1').should.be.eql('0');
+  });
+
+  it('works when n=2');
+
+  it('works when n=3');
+
+  it('works when n=4');
+
+  it('works when n=5', function () {
+    westOf('00000').should.be.eql('01011');
+    westOf('00001').should.be.eql('00000');
+
+    // TODO add test cases
+    westOf('11111').should.be.eql('11110');
+  });
+
+  it('works when n=6', function () {
+    westOf('000001').should.be.eql('000000');
+    westOf('000100').should.be.eql('000001');
+    westOf('000011').should.be.eql('000010');
+
+    // TODO add test cases
+    westOf('111111').should.be.eql('111110');
+  });
+});
+
+},{"geohash-neighbours":44}]},{},[42,43,45,46,47,48,49,50,51,52]);
