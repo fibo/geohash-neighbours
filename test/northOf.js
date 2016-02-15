@@ -24,6 +24,17 @@ describe('northOf', () => {
     northOf('11111').should.be.eql('11011')
   })
 
+  it('works when n=6', () => {
+    should(northOf('000000')).be.null
+    should(northOf('000001')).be.null
+    northOf('000010').should.be.eql('000000')
+    northOf('000011').should.be.eql('000001')
+
+    // TODO add test cases
+    northOf('111110').should.be.eql('111100')
+    northOf('111111').should.be.eql('111101')
+  })
+
   it('returns null if geohash is on north border', () => {
     should(northOf('0000000')).be.null
   })

@@ -53,7 +53,19 @@ function westOf (geoHash) {
   if (n < 5) return edgeCase[n][geoHash]
 
   if (n % 2 === 0) {
-    // TODO
+    const parentSquare = geoHash.substr(0, n - 4)
+    const last4Bits = geoHash.substr(n - 4, 4)
+    const borderCells = [
+      '0000', '0010', '1000', '1010'
+    ]
+
+    const westOfLast4Bits = westOf(last4Bits)
+
+    if (borderCells.indexOf(last4Bits) === -1) {
+      return parentSquare + westOfLast4Bits
+    } else {
+      return westOf(parentSquare) + westOfLast4Bits
+    }
   } else {
     const container = geoHash.substr(0, n - 1)
     const lastBit = geoHash.substr(n - 1, 1)

@@ -19,4 +19,13 @@ describe('eastOf', () => {
     // TODO add test cases
     eastOf('11111').should.be.eql('10100')
   })
+
+  it('works when n=6', () => {
+    eastOf('000000').should.be.eql('000001')
+    eastOf('000001').should.be.eql('000100')
+    eastOf('000010').should.be.eql('000011')
+
+    // TODO add test cases
+    eastOf('111110').should.be.eql('111111')
+  })
 })

@@ -22,6 +22,15 @@ describe('southOf', () => {
     should(southOf('11111')).be.null
   })
 
+  it('works when n=6', () => {
+    southOf('000000').should.be.eql('000010')
+    southOf('000001').should.be.eql('000011')
+
+    // TODO add test cases
+    should(southOf('111110')).be.null
+    should(southOf('111111')).be.null
+  })
+
   it('returns null if geohash is on south border', () => {
     should(southOf('111111')).be.null
   })

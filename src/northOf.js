@@ -53,7 +53,23 @@ function northOf (geoHash) {
   if (n < 5) return edgeCase[n][geoHash]
 
   if (n % 2 === 0) {
-    // TODO
+    const parentSquare = geoHash.substr(0, n - 4)
+    const last4Bits = geoHash.substr(n - 4, 4)
+    const northOfBorderCell = {
+      '0000': '1010',
+      '0001': '1011',
+      '0100': '1110',
+      '0101': '1111'
+    }
+
+    if (Object.keys(northOfBorderCell).indexOf(last4Bits) === -1) {
+      return parentSquare + northOf(last4Bits)
+    } else {
+      const northOfParentSquare = northOf(parentSquare)
+
+      if (northOfParentSquare) return northOfParentSquare + northOfBorderCell[last4Bits]
+      else return null
+    }
   } else {
     const container = geoHash.substr(0, n - 1)
     const lastBit = geoHash.substr(n - 1, 1)

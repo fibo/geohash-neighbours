@@ -14,6 +14,13 @@ With [npm](https://www.npmjs.com/) do
 npm install geohash-neighbours --save
 ```
 
+## Status
+
+Algorithm was written and implemented in few days: as a mathematician, I am
+confident it is right. It needs more test cases as well as users that try it
+and compare it to the method they are currently using.
+So your feedback will be welcome.
+
 ## GeoHash format
 
 The geoHash is given in binary format as a string of 0 1, so iterations look like the following

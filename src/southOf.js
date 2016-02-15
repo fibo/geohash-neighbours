@@ -53,7 +53,23 @@ function southOf (geoHash) {
   if (n < 5) return edgeCase[n][geoHash]
 
   if (n % 2 === 0) {
-    // TODO
+    const parentSquare = geoHash.substr(0, n - 4)
+    const last4Bits = geoHash.substr(n - 4, 4)
+    const southOfBorderCell = {
+      '1010': '0000',
+      '1011': '0001',
+      '1110': '0100',
+      '1111': '0101'
+    }
+
+    if (Object.keys(southOfBorderCell).indexOf(last4Bits) === -1) {
+      return parentSquare + southOf(last4Bits)
+    } else {
+      const southOfParentSquare = southOf(parentSquare)
+
+      if (southOfParentSquare) return southOfParentSquare + southOfBorderCell[last4Bits]
+      else return null
+    }
   } else {
     const container = geoHash.substr(0, n - 1)
     const lastBit = geoHash.substr(n - 1, 1)

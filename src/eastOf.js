@@ -53,7 +53,19 @@ function eastOf (geoHash) {
   if (n < 5) return edgeCase[n][geoHash]
 
   if (n % 2 === 0) {
-    // TODO
+    const parentSquare = geoHash.substr(0, n - 4)
+    const last4Bits = geoHash.substr(n - 4, 4)
+    const borderCells = [
+      '0101', '0111', '1101', '1111'
+    ]
+
+    const eastOfLast4Bits = eastOf(last4Bits)
+
+    if (borderCells.indexOf(last4Bits) === -1) {
+      return parentSquare + eastOfLast4Bits
+    } else {
+      return eastOf(parentSquare) + eastOfLast4Bits
+    }
   } else {
     const container = geoHash.substr(0, n - 1)
     const lastBit = geoHash.substr(n - 1, 1)
