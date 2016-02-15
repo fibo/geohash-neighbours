@@ -23,6 +23,22 @@
 
 ## Installation
 
+### Client side
+
+With [bower](http://bower.io/) do
+
+```bash
+bower install geohash-neighbours
+```
+
+or use a CDN adding this to your HTML page
+
+```
+<script src="https://cdn.rawgit.com/fibo/geohash-neighbours/master/dist/geohash-neighbours.min.js"></script>
+```
+
+### Server side
+
 With [npm](https://www.npmjs.com/) do
 
 ```

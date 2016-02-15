@@ -1,4 +1,4 @@
-const eastOf = require('../src/eastOf')
+const eastOf = require('geohash-neighbours').eastOf
 
 describe('eastOf', () => {
   it('works when n=1', () => {

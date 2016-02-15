@@ -13,14 +13,22 @@
     "node": ">=4 <5"
   },
   "scripts": {
+    "_build": "npm test && npm run browserify && npm run minify && npm run jekyll; git status",
     "_push": "git push origin master && npm run gh-pages_push",
     "_pull": "git pull origin master && npm run gh-pages_pull",
+    "browserify": "for x in dist test; do npm run browserify_$x; done",
+    "browserify_dist": "browserify -r ./index.js:${npm_package_name} -t babelify -o dist/${npm_package_name}.js",
+    "browserify_test": "browserify test/southOf.js -t babelify -o gh-pages/test/bundle.js",
     "check-deps": "npm outdated",
+    "cp": "npm run cp_dist; npm run cp_package.json",
+    "cp_dist": "cp -r dist/ gh-pages/",
     "cp_package.json": "cp package.json gh-pages/_data/",
     "gh-pages_push": "git subtree --prefix gh-pages push origin gh-pages",
     "gh-pages_pull": "git subtree --prefix gh-pages pull origin gh-pages",
+    "jekyll": "npm run homepage; npm run cp; cd gh-pages; jekyll build; cd ..",
     "homepage": "echo \"---\ntitle: $npm_package_name\n---\" > gh-pages/index.md; cat README.md >> gh-pages/index.md",
     "lint": "standard --global describe --global it",
+    "minify": "cd dist; uglifyjs ${npm_package_name}.js --source-map ${npm_package_name}.map --output ${npm_package_name}.min.js --compress --mangle --preamble \"// ${npm_package_name}.js ${npm_package_homepage} \n// license ${npm_package_license}\"; cd -",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "test": "mocha"
   },
@@ -40,10 +48,18 @@
     "check-deps"
   ],
   "devDependencies": {
+    "babel-plugin-check-es2015-constants": "^6.5.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.5.2",
+    "babel-plugin-transform-es2015-block-scoping": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
     "mocha": "^2.4.5",
     "pre-commit": "^1.1.2",
     "should": "^8.2.2",
-    "standard": "^6.0.5"
+    "standard": "^6.0.5",
+    "uglify-js": "^2.4.24"
   },
-  "dependencies": {}
+  "dependencies": {
+    "strict-mode": "^0.5.0"
+  }
 }

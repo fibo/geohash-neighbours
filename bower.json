@@ -1,0 +1,27 @@
+{
+  "name": "geohash-neighbours",
+  "main": "dist/geohash-neighbours.js",
+  "homepage": "http://g14n.info/geohash-neighbours",
+  "authors": [
+    "Gianluca Casati"
+  ],
+  "description": "finds the cells near a given geohash",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "geohash"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bin",
+    "gh-pages",
+    "index.js",
+    "node_modules",
+    "npm-debug.log",
+    "package.json",
+    "src",
+    "test"
+  ]
+}

@@ -1,4 +1,4 @@
-const southWestOf = require('../src/southWestOf')
+const southWestOf = require('geohash-neighbours').southWestOf
 const should = require('should')
 
 describe('southWestOf', () => {

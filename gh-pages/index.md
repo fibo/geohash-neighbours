@@ -9,13 +9,51 @@ title: geohash-neighbours
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
+**Table Of Contents:**
+
+* [Installation](#installation)
+* [GeoHash format](#geohash-format)
+* [Api](http://g14n.info/dflow/api)
+  - [neighboursOf](#neighboursofgeohash)
+  - [eastOf](#eastofgeohash)
+  - [northEastOf](#northeastofgeohash)
+  - [northOf](#northofgeohash)
+  - [northWestOf](#northwestofgeohash)
+  - [westOf](#westofgeohash)
+  - [southWestOf](#southwestofgeohash)
+  - [southOf](#southofgeohash)
+  - [southEastOf](#southeastofgeohash)
+
 ## Installation
+
+### Client side
+
+With [bower](http://bower.io/) do
+
+```bash
+bower install geohash-neighbours
+```
+
+or use a CDN adding this to your HTML page
+
+```
+<script src="https://cdn.rawgit.com/fibo/geohash-neighbours/master/dist/geohash-neighbours.min.js"></script>
+```
+
+### Server side
 
 With [npm](https://www.npmjs.com/) do
 
 ```
 npm install geohash-neighbours --save
 ```
+
+## Status
+
+Algorithm was written and implemented in few days: as a mathematician, I am
+confident it is right. It needs more test cases as well as users that try it
+and compare it to the method they are currently using.
+So your feedback will be welcome.
 
 ## GeoHash format
 

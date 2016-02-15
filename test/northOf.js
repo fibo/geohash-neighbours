@@ -1,4 +1,4 @@
-const northOf = require('../src/northOf')
+const northOf = require('geohash-neighbours').northOf
 const should = require('should')
 
 describe('northOf', () => {

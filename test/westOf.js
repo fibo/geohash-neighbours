@@ -1,4 +1,4 @@
-const westOf = require('../src/westOf')
+const westOf = require('geohash-neighbours').westOf
 
 describe('westOf', () => {
   it('works when n=1', () => {

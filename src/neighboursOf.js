@@ -20,7 +20,7 @@ const validate = require('./validate')
 function neighboursOf (geoHash) {
   validate(geoHash)
 
-  let neighbours = []
+  var neighbours = []
 
   // Number of iterations.
   const n = geoHash.length
