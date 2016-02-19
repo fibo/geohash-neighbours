@@ -10,7 +10,7 @@
 
 * [Installation](#installation)
 * [GeoHash format](#geohash-format)
-* [Api](http://g14n.info/dflow/api)
+* [Api](#api)
   - [neighboursOf](#neighboursofgeohash)
   - [eastOf](#eastofgeohash)
   - [northeastOf](#northeastofgeohash)
