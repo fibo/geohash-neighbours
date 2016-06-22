@@ -9,9 +9,6 @@
   },
   "license": "MIT",
   "main": "index.js",
-  "engines": {
-    "node": ">=4 <5"
-  },
   "scripts": {
     "build": "npm test && npm run browserify && npm run minify && npm run jekyll; git status",
     "browserify": "for x in dist test; do npm run browserify_$x; done",
@@ -26,7 +23,7 @@
     "lint": "for x in src test; do npm run lint_$x; done",
     "lint_src": "standard src/*.js",
     "lint_test": "cd test; standard --global describe --global it; cd -",
-    "minify": "cd dist; uglifyjs ${npm_package_name}.js --source-map ${npm_package_name}.map --output ${npm_package_name}.min.js --compress --mangle --preamble \"// ${npm_package_name}.js ${npm_package_homepage} \n// license ${npm_package_license}\"; cd -",
+    "minify": "cd dist; uglifyjs ${npm_package_name}.js --source-map ${npm_package_name}.map --output ${npm_package_name}.min.js --compress --mangle --preamble \"// Software: ${npm_package_name}\n// Homepage: ${npm_package_homepage}\n// License: ${npm_package_license}\"; cd -",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "postupdate-deps": "npm test && git commit -am 'updated deps' || git checkout -- package.json",
     "push": "git push origin master && npm run gh-pages_push",
