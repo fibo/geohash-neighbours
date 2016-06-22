@@ -28,9 +28,11 @@
     "lint_test": "cd test; standard --global describe --global it; cd -",
     "minify": "cd dist; uglifyjs ${npm_package_name}.js --source-map ${npm_package_name}.map --output ${npm_package_name}.min.js --compress --mangle --preamble \"// ${npm_package_name}.js ${npm_package_homepage} \n// license ${npm_package_license}\"; cd -",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "postupdate-deps": "npm test && git commit -am 'updated deps' || git checkout -- package.json",
     "push": "git push origin master && npm run gh-pages_push",
     "pull": "git pull origin master && npm run gh-pages_pull",
-    "test": "mocha"
+    "test": "mocha",
+    "update-deps": "npm update --save --dev"
   },
   "repository": {
     "type": "git",
