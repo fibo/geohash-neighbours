@@ -7,4 +7,3 @@ describe('neighboursOf', () => {
     should.deepEqual(neighboursOf('1'), ['0'])
   })
 })
-

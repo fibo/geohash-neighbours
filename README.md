@@ -2,11 +2,11 @@
 
 > finds the cells near a given [geohash][1]
 
-[![NPM version](https://badge.fury.io/js/geohash-neighbours.svg)](http://badge.fury.io/js/geohash-neighbours) [![Build Status](https://travis-ci.org/fibo/geohash-neighbours.svg?branch=master)](https://travis-ci.org/fibo/geohash-neighbours?branch=master) [![Test page](https://img.shields.io/badge/test-page-blue.svg)](http://g14n.info/geohash-neighbours/test)
+[![NPM version](https://badge.fury.io/js/geohash-neighbours.svg)](http://badge.fury.io/js/geohash-neighbours) [![Build Status](https://travis-ci.org/fibo/geohash-neighbours.svg?branch=master)](https://travis-ci.org/fibo/geohash-neighbours?branch=master)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-**Table Of Contents:**
+## Table Of Contents
 
 * [Installation](#installation)
 * [GeoHash format](#geohash-format)
@@ -23,26 +23,10 @@
 
 ## Installation
 
-### Client side
-
-With [bower](http://bower.io/) do
-
-```bash
-bower install geohash-neighbours
-```
-
-or use a CDN adding this to your HTML page
-
-```
-<script src="https://cdn.rawgit.com/fibo/geohash-neighbours/master/dist/geohash-neighbours.min.js"></script>
-```
-
-### Server side
-
 With [npm](https://www.npmjs.com/) do
 
-```
-npm install geohash-neighbours --save
+```bash
+npm install geohash-neighbours
 ```
 
 ## Status
@@ -50,7 +34,7 @@ npm install geohash-neighbours --save
 Algorithm was written and implemented in few days: as a mathematician, I am
 confident it is right. It needs more test cases as well as users that try it
 and compare it to the method they are currently using.
-So your feedback will be welcome.
+Your feedback will be welcome.
 
 ## GeoHash format
 
@@ -101,7 +85,7 @@ The geoHash is given in binary format as a string of 0 1, so iterations look lik
 
 > computes the cells near a given geohash
 
-```
+```javascript
 const neighboursOf = require('geohash-neighbours').neighboursOf
 const geoHash = '0011'
 
@@ -122,7 +106,7 @@ console.log(neighboursOf(geoHash)) // [
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
 * `@returns {String}`: neighbour at east of given geohash.
 
-```
+```javascript
 const eastOf = require('geohash-neighbours').eastOf
 
 console.log(eastOf('0000'))
@@ -135,7 +119,7 @@ console.log(eastOf('0000'))
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
 * `@returns {String}`: neighbour at northeast of given geohash.
 
-```
+```javascript
 const northeastOf = require('geohash-neighbours').northeastOf
 
 console.log(northeastOf('0000'))
@@ -148,7 +132,7 @@ console.log(northeastOf('0000'))
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
 * `@returns {String}`: neighbour at north of given geohash.
 
-```
+```javascript
 const northOf = require('geohash-neighbours').northOf
 
 console.log(northOf('0000'))
@@ -161,7 +145,7 @@ console.log(northOf('0000'))
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
 * `@returns {String}`: neighbour at northwest of given geohash.
 
-```
+```javascript
 const northwestOf = require('geohash-neighbours').northwestOf
 
 console.log(northwestOf('0000'))
@@ -174,7 +158,7 @@ console.log(northwestOf('0000'))
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
 * `@returns {String}`: neighbour at west of given geohash.
 
-```
+```javascript
 const westOf = require('geohash-neighbours').westOf
 
 console.log(westOf('0000'))
@@ -187,7 +171,7 @@ console.log(westOf('0000'))
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
 * `@returns {String}`: neighbour at southwest of given geohash.
 
-```
+```javascript
 const southwestOf = require('geohash-neighbours').southwestOf
 
 console.log(southwestOf('0000'))
@@ -200,7 +184,7 @@ console.log(southwestOf('0000'))
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
 * `@returns {String}`: neighbour at south of given geohash.
 
-```
+```javascript
 const southOf = require('geohash-neighbours').southOf
 
 console.log(southOf('0000'))
@@ -213,7 +197,7 @@ console.log(southOf('0000'))
 * `@param {String}`: geoHash given in [geoHash format](#geohash-format).
 * `@returns {String}`: neighbour at southeast of given geohash.
 
-```
+```javascript
 const southeastOf = require('geohash-neighbours').southeastOf
 
 console.log(southeastOf('0000'))
